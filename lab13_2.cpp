@@ -22,39 +22,26 @@ int main()
     return 0;
 }
 
-void updateImage(bool image[][M], int s , int x, int y) {
-    
-    for (int i = 0; i < N; i++) {
-        if (s,x,y == 0) {
-            break;
-        } else {
-        for (int j = 0; j < M; j++) {
-            if (sqrt(pow(i-x,2)+pow(j-y,2)) <= s-1) {
-                image[i][j] = 1;
-            }
-        }
-        }
-    }                                                       
+void showImage(const bool A[N][M]){
+    cout << "------------------------------------------------------------------------\n";
+    for(int i = 0 ;i < N; i++){
+        cout << "|" ;
+    for(int j = 0 ;j < M ;j++){
+        if(A[i][j]) cout << "*";
+        else cout << " ";
+    }
+    cout << "|\n";
 }
-void showImage(const bool image[][M]) {
-    for (int i = 0; i < M+2; i++) {
-        cout << "-";
-    }
-    cout << endl;
-    for (int i = 0; i < N; i++) {
-        cout << "|";
-        for (int j = 0; j < M; j++) {
-            if (image[i][j] == 1) {
-                cout << "*";
-            } else {
-                cout << " ";
-            }
+cout << "------------------------------------------------------------------------\n";
+}
+
+void updateImage(bool A[N][M],int s,int x,int y){
+    {
+     for(int i = 0 ;i < N ; i++){
+        for(int j = 0 ; j < M ; j++ ){
+        if  (sqrt(pow(i-x,2)+pow(j-y,2))<=s-1)
+                A[i][j] = 1 ;
         }
-        cout << "|";
-        cout << endl;
-    }
-    for (int i = 0; i < M+2; i++) {
-        cout << "-";
-    }
-    cout << endl;
-}           
+}   
+}
+}
